@@ -1,5 +1,6 @@
 import Leaflet from 'leaflet'
-import { streetlightPopup } from './Popups'
+import { gulliesPopup } from './Popups'
+import { gulliesStyle } from './Styles'
 
 const Configuration = {
     Map: {
@@ -14,23 +15,18 @@ const Configuration = {
     DynamicData: 
     [
         {
-            key: 'streetlights',
-            url: 'https://spatial.stockport.gov.uk/geoserver/wfs?service=WFS&version=1.1.0&request=GetFeature&typeName=highways:street_lights&outputFormat=application/json&bbox={0},EPSG:4326&srsName=EPSG:4326',
+            key: 'Gullies',
+            url: 'https://spatial.stockport.gov.uk/geoserver/wfs?service=WFS&version=1.1.0&request=GetFeature&typeName=highway_assets:gully_faults_live&outputFormat=application/json&bbox={0},EPSG:4326&srsName=EPSG:4326',
             layerOptions: {
-                onEachFeature: streetlightPopup,
                 maxZoom: 16,
+                onEachFeature: gulliesPopup,
                 pointToLayer: (feature, latlng) => {
-                    return Leaflet.circleMarker(latlng, {
-                        radius: 8,
-                        fillColor: '#15863a',
-                        color: '#000',
-                        weight: 1,
-                        fillOpacity: 1
-                    })
-                },
+                    return Leaflet.circleMarker (latlng, gulliesStyle (feature))
+                }
             },
-            displayOverlay: false
-        }
+            displayOverlay: true,
+            visibleByDefault: true
+        },
     ],
     StaticData: 
     [

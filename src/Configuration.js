@@ -1,16 +1,17 @@
 import Leaflet from 'leaflet'
-import { gulliesPopup } from './Popups'
-import { gulliesStyle } from './Styles'
+import { gulliesPopup} from './Popups' //devsitesPopup, notdevsitesPopup}
+import { gulliesStyle} from './Styles'
 
 const Configuration = {
     Map: {
-        StartingLatLng: [53.3915, -2.125143],
-        StartingZoom: 12,
+        StartingLatLng: [53.391067,-2.1197936],
+        StartingZoom: 2,
         FullscreenControl: true,
         DisplayLayerControls: true,
         DisplayGrayScale: true,
         DisplayStreets: true,
-        EnableAddressSearch: true
+        EnableAddressSearch: true,
+        EnableLocateControl: true
     },
     DynamicData: 
     [
@@ -41,7 +42,6 @@ const Configuration = {
             displayOverlay: false,
             visibleByDefault: true
         },
-
         {
             key: 'os1250_text',
             url: 'http://spatial.stockport.gov.uk/geoserver/wms?',
@@ -54,7 +54,7 @@ const Configuration = {
             },
             displayOverlay: false,
             visibleByDefault: true
-        },
+        }
         
     ],
     StaticData: 

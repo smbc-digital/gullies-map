@@ -7,7 +7,7 @@ switch  (d) {   case 1    :
                     return '#e31a1c'    
             }
 }
-
+    
 function gulliesStyle (feature) {
 return {
     color: '#000',
@@ -17,7 +17,7 @@ return {
     fillOpacity: 0.5
     }
 }
-
+    
 export {
 gulliesStyle
-}
+}   

@@ -5,7 +5,7 @@ const gulliesActivePopup = feature => {
 
   return `<div class="item"><i class="tag fa fa-map-marker"></i><p class="title">Location </p><p class="info">${feature.properties.street}</p></div><hr/>
   <div class="item"><i class="tag fa fa-tag"></i><p class="title">Number on grid </p><p class="info">${feature.properties.central_asset_id}</p></div>
-  <a class="button-primary" href="${varName}/gully/report-an-issue/additional-info?SiteCode=${feature.properties.site_code}&AssetId=${feature.properties.central_asset_id}&Easting=${feature.properties.easting}&Northing=${feature.properties.northing}">Report this gully</a>`
+  <a class="button-primary" href="report-an-issue/additional-info?SiteCode=${feature.properties.site_code}&AssetId=${feature.properties.central_asset_id}&Easting=${feature.properties.easting}&Northing=${feature.properties.northing}">Report this gully</a>`
 }
 
 const gulliesFaultPopup = feature => {
